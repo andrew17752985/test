@@ -1,0 +1,136 @@
+.header{
+    display: flex;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    
+}
+.header_logo{
+    padding: 15px 0;
+    flex: 0 0 108px;
+}
+.header_list{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    @include devices(tablet){
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 80%;
+        z-index: 2;
+        max-width: 300px;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-end;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        margin: 0;
+        &.is-open{
+            transform: translateX(0);
+            + .backdrop{
+                display: block;
+            }
+        }
+        .header_button{
+            padding-right: 19px;
+
+        }
+        .header_items{
+            padding: 25px;
+        }
+        .top{
+            margin-top: auto;
+        }
+        
+    }
+
+}
+@include devices(tablet){
+    .backdrop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+        display: none;
+    }
+}
+
+
+.header_link{
+    position: relative;
+    padding: 22px;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+    @include devices(desktop){
+        padding: 22px 10px;
+        &::before{
+            position: absolute;
+            content: "";
+            left: 11px;
+            right: 11px;
+            height: 2px;
+            background-color: #FF6464;
+            bottom: 18px;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        &:hover::before{
+            transform: scale(1);
+        }
+    }
+}
+
+.header_enter{
+   margin-left: auto;
+   padding: 22px 0 22px 24px;
+   @include devices(tablet){
+    display: none;
+}
+   
+}
+
+header{
+    border-bottom:#EDEDED 1px solid ;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.header_button{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--primary-text-color);
+}
+
+.open{
+    margin-left: auto;
+}
+
+@include devices(desktop){
+    .close{
+        display: none;
+    }
+    .top{
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 779px) {
+    .header_button{ 
+        display: none;
+    } 
+}

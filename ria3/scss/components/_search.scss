@@ -1,0 +1,53 @@
+.search{
+    margin: auto;   
+}
+.search_form{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 30px 0;
+
+    @include devices(mobile){
+        flex-direction: column;
+    }
+
+}
+.search_input{
+    border: #5F6265 2px solid;
+    border-radius: 8px;
+    height: 16px;
+    padding: 12px 0 12px 40px;
+    flex: 1;
+    background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2_127)'%3E%3Cpath d='M13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7Z' stroke='%235F6265' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M12 12L15 15' stroke='%235F6265' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E") 15px 10px no-repeat;
+
+    
+    &::placeholder{
+        left: 40px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &:active{
+        border-color: #000;
+    }
+}
+.search_button{
+    font-size: 16px;
+    line-height: 20px;
+    padding: 12px 40px;
+    background-color: var(--primary-button-color);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    @include devices(mobile){
+        width: 100%;
+    }
+
+    &:hover{
+       background-color: rgb(194, 8, 8);
+       box-shadow: 2px 2px 4px rgba($color: #836b6b, $alpha: 0.7);
+    }
+}

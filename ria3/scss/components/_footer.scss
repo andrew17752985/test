@@ -1,0 +1,20 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_privacy{
+    font-family: roboto;
+    font-weight: 400;
+    white-space: nowrap;
+    padding: 22px 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--title-text-color) ;
+}
+.footer_link{
+    align-items: center;
+    color: var(--primary-text-color);
+}
+footer{
+    border-top:#EDEDED 1px solid ;
+}
